@@ -34,9 +34,10 @@ const ProductCard = ({ id,name,img,price,text,colors}) => {
         {colors?.map((color,index)=>{
             return (
                 <i 
-                    className='fas fa-map-market-alt fa-sm mt-[3px]'>
+                    className='fas fa-map-market-alt fa-sm mt-[3px] rounded-full p-2 mr-4'
                     key={index}
                     style={{ backgroundColor:color}}
+                    >
                 </i>
             )
         })}
