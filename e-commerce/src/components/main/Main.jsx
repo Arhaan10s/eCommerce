@@ -1,12 +1,14 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Slider from '../Slider/Slider';
+import NavigateButtons from '../NavigateButton/NavigateButtons';
 
 function Main(){
     return(
         <div>
-            <Navbar></Navbar>
-            <Slider></Slider>
+            <Navbar />
+            <Slider />
+            <NavigateButtons />
         </div>
     ) 
 }
