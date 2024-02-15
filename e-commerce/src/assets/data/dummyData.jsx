@@ -629,6 +629,7 @@ export const storeData = [
     type: "Bags",
     color: ["black", "blue", "red"],
     gender: "female",
+    size:["S"],
     price: 500,
   },
   {
