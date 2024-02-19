@@ -24,7 +24,7 @@ const Navbar = () => {
                 <img className="h-128 w-full" src={logo} alt="store"></img>
             </div>
             <div className='flex flex-row items-center' >
-                <button className='font-inter text-base font-medium tracking-normal leading-none text-center mr-4'>
+                <button size='20px' className='font-inter text-base font-medium tracking-normal leading-none text-center mr-4'>
                     Logout
                 </button>
                 <div className='flex flex-row items-center'>
@@ -40,7 +40,7 @@ const Navbar = () => {
                     </span> : ""}
                     
                     <p className='font-inter text-base font-large tracking-normal leading-none text-center mr-2'>
-                        <FaShoppingCart />
+                        <FaShoppingCart size='20px'/>
                     </p>
                     <div>{open && 
                         <Cart 

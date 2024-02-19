@@ -87,7 +87,7 @@ const Cart = ({openModal,setOpen}) => {
           </DialogBody>
           <DialogFooter className='flex justify-start items-center'>  
             <p className='text-black text-base font-inter tracking-normal leading-none pt-2'>
-                Total Price Of all Products :{' '} <span className='ml-2'>{totalPrice}</span>    
+                Total Price Of all Products :{' '} <span className='ml-2'>${totalPrice}</span>    
             </p>  
           </DialogFooter>
         </Dialog>

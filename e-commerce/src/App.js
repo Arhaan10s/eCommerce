@@ -6,7 +6,7 @@ import SingleProduct from './components/FilteredProducts/SingleProduct';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
         <Routes>
           <Route
