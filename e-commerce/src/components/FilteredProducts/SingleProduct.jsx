@@ -7,7 +7,12 @@ import { useState } from 'react';
 import Dropdown2 from '../Dropdown/Dropdown2';
 import { Tooltip,Button } from '@material-tailwind/react'
 import { addToCart } from '../../features/slices/cartSlice';
+import { addToWish } from '../../features/slices/wishSlice';
 import { useDispatch } from 'react-redux';
+import { FaRegHeart } from "react-icons/fa";
+
+
+
 
 const SingleProduct = () => {
 
@@ -20,9 +25,25 @@ const SingleProduct = () => {
     setSelection(item);
     
   }
+  const [clicked, setClicked] = useState(false);
+
+
   const [colorselect,setColorselect] = useState('Select...');
   const handleColorSelect=(item)=>{
     setColorselect(item);
+  }
+  const handleClick=(item)=>{
+    setClicked(true);
+    dispatch(addToWish({
+      id: item.id,
+      name: item.name,
+      img: item.img,
+      text: item.text,
+      size: sizeSelect,
+      color: colorselect,
+      price: item.price,
+    }))
+    
   }
 
   return (
@@ -49,6 +70,9 @@ const SingleProduct = () => {
               </p>
               <p className='text-gray-600 text-xl font-inter font-bold tracking-normal leading-none pb-4'>
                 {item.text}
+              </p>
+              <p className='text-black-600 text-xl font-inter font-bold tracking-normal leading-none pb-4'>
+                ${item.price}
               </p>
               
               <div className='flex font-inter pb-4'>
@@ -87,7 +111,6 @@ const SingleProduct = () => {
                   <label  className="block mb-2 text-lg font-inter font-medium text-gray-900 dark:text-white">Select Color</label>
                       <div >
                           <Dropdown2
-                           disabled={true}
                             options={item.color}
                             value={colorselect}
                             onChange={handleColorSelect}
@@ -120,6 +143,18 @@ const SingleProduct = () => {
                     >
                       Add to Cart
                   </Button>
+              </Tooltip>
+              <Tooltip  placement="bottom">
+              <FaRegHeart
+                    className='heart-icon'
+                    color={clicked ? 'red' : 'gray'}
+                    size={40} 
+                    style={{ padding: '7px' , fill: clicked ? 'red' : 'gray'}} 
+                    ripple={true}
+                    onClick={()=>{handleClick(item)}
+                  }
+                    >
+                  </FaRegHeart>
               </Tooltip>
             </div>
           </div>

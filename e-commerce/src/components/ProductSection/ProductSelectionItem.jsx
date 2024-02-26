@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux';
 import { singleProduct } from '../../features/slices/productSlice';
 import {Link,useParams} from 'react-router-dom';
 
+
 const ProductSelectionItem = ({id,img,name,text,size,price,color,totalPrice}) => {
     
     const dispatch = useDispatch();
