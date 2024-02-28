@@ -1,7 +1,7 @@
 import React from 'react'
 import {
-    Button,
     Dialog,
+    Button,
     DialogHeader,
     DialogBody,
     DialogFooter,
@@ -9,6 +9,7 @@ import {
   import { Tooltip } from "@material-tailwind/react";
   import { useSelector , useDispatch } from 'react-redux';
   import { FaRegHeart } from "react-icons/fa";
+  import { removeWish } from '../../features/slices/wishSlice';
 
 const Wishlist = ({openModal,setWish}) => {
 
@@ -32,9 +33,10 @@ const Wishlist = ({openModal,setWish}) => {
                                 <div className="grid grid-cols-2 py-4">
                                     <div>
                                         <img
-                                            className='h-[125px] rounded-md'
+                                            className='h-[125px] rounded-md font-inter sans-serif '
                                             src={item.img}
                                             alt={item.name}
+                                            
                                         ></img>
                                         <div className='flex flex-col items-start'>
                                             <h4 className='text-black font-inter text-base font-bold tracking-normal leading-none pt-2'>
@@ -58,7 +60,19 @@ const Wishlist = ({openModal,setWish}) => {
                                         <p className='text-black text-sm font-inter tracking-normal leading-none pt-2'>
                                             Item Price :{" "} <span className='ml-2'>${item.price}</span>
                                         </p>
-                                        
+                                        <div className='pt-4'>
+                                            <Tooltip content='Remove from the Wishlist' placement='bottom'>
+                                                <Button
+                                                    size='sm'
+                                                    color='red'
+                                                    ripple={true}
+                                                    variant='filled'
+                                                    onClick={()=>dispatch(removeWish(item))}
+                                                >
+                                                    Remove
+                                                </Button>
+                                            </Tooltip>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
