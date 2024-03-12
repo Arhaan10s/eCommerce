@@ -10,6 +10,7 @@ import {
   import { useSelector , useDispatch } from 'react-redux';
   import { FaRegHeart } from "react-icons/fa";
   import { removeWish } from '../../features/slices/wishSlice';
+  
 
 const Wishlist = ({openModal,setWish}) => {
 
@@ -72,6 +73,28 @@ const Wishlist = ({openModal,setWish}) => {
                                                     Remove
                                                 </Button>
                                             </Tooltip>
+                                            {/* <Tooltip content='Add from the Wishlist' placement='bottom'>
+                                                <Button
+                                                    size='6px'
+                                                    color='red'
+                                                    ripple={true}
+                                                    variant='filled'
+                                                    onClick={()=>{
+                                                        <ProductSelectionItem 
+                                                        id={item.id}
+                                                        name={item.name}
+                                                        img={item.img}
+                                                        text={item.text}
+                                                        price={item.price}
+                                                        color={item.color}
+                                                        size={item.size}
+                                                        totalPrice={item.totalPrice}  
+                                                    />
+                                                    }}>
+                                                
+                                                    Visit
+                                                </Button>
+                                            </Tooltip> */}
                                         </div>
                                     </div>
                                 </div>

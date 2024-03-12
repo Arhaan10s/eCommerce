@@ -5,8 +5,11 @@ import { useSelector } from 'react-redux';
 import Cart from '../Cart/Cart';
 import Wishlist from '../Wishlist/Wishlist';
 import { FaShoppingCart,FaRegHeart } from "react-icons/fa";
+import { Login } from '../Login/login';
 
 const Navbar = () => {
+    const user = useSelector((state)=>state.user.authUser);
+    
     const totalAmount = useSelector((state)=>state.cart.totalAmount);
     const totalWishlist = useSelector((state)=>state.wish.totalWish);
     const [open, setOpen] = useState(false);
@@ -65,6 +68,15 @@ const Navbar = () => {
                         />}
                     </div>
                 </div>
+                {!user ?(
+                <Login size='20px' className='font-inter text-base font-medium tracking-normal leading-none text-center mr-4'>
+                    Sign in
+                </Login>
+                ):(
+                    <div className='font-inter text-base font-medium tracking-normal leading-none text-center mr-4'>
+                        login
+                    </div>
+                )}
             </div>
         </div>
         <div className='bg-black p-4 w-full flex justify-around'>
